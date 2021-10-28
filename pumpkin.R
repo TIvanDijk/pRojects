@@ -1,19 +1,20 @@
-## Use {gganimate} to progressively draw a 'mathematical' pumpkin 
+# -- Use {gganimate} to progressively draw a 'mathematical' pumpkin --
 library(ggplot2)
 library(gganimate)
 library(tidyverse)
 library(showtext)
 library(ggtext)
 
-npoints = 250
-t = seq(0, 2*pi, length.out = npoints)
-
+# spooooooky font
 font_add_google("Creepster", 'creepster')
 showtext_auto()
 
-# define the functions
-## could not find a way to use expressions and {frame_along} combined
-## work around using {ggtext}
+npoints = 250
+t = seq(0, 2*pi, length.out = npoints)
+
+# -- define the functions -- 
+# could not find a way to use expressions and {frame_along} combined
+# work around using {ggtext}
 shapeFun <- function(npoints, t){
   x = 8 * sin(t)^3
   y = 8 * cos(t) - 3 * cos(t)^3 - cos(t)^5 
@@ -51,15 +52,17 @@ mouthFun <- function(npoints, t){
                  <span style="color:grey20">tab</span><b><i>y</i></b> = cos(<i>&theta;</i>) - 0.75&pi;'))
 }
 
-# calculate the coordinates 
+# -- calculate n points for each function --
 df <-rbind(
         shapeFun(npoints, t),
         stemFun(npoints, t),
         eyesFun(npoints, t, type = 'l'), 
         eyesFun(npoints, t, type = 'r'), 
-        mouthFun(npoints, t)) %>% 
-  mutate(step = 1:n())
+        mouthFun(npoints, t)) %>%
+  # step is needed for animation
+  mutate(step = 1:n())    
 
+# -- animation -- 
 pumpkin <- ggplot(df, aes(x = x, y = y, color = type, fill = type)) +
   geom_polygon() +
   geom_line() +
@@ -68,7 +71,6 @@ pumpkin <- ggplot(df, aes(x = x, y = y, color = type, fill = type)) +
   scale_fill_manual( values = c('orange', 'brown', rep('grey20', 3))) +
   scale_y_continuous(breaks = c(-4, 0, 4)) +
   transition_reveal(step, keep_last = F) +
-  #shadow_wake(wake_length = 0.10, alpha = 0.5) 
   labs(title = 'Spooky mathematics', 
        subtitle = '{ifelse(as.integer(frame_along) == nrow(df), "", df$eq[as.integer(frame_along)])}',
        caption = 'by @ThomIvar') +
