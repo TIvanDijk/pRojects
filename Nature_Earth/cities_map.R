@@ -19,7 +19,7 @@ df <- readOGR( dsn = tempUnzipped, verbose = FALSE) %>%  #read shapefile
 ggplot(df) +
   geom_point( aes(x = lon, y = lat), 
               alpha = 0.6, color = 'grey20', size = 0.25) + 
-  labs(title = 'Cities with over 100,000 inhabitants', 
+  labs(title = 'Cities with more than 100,000 inhabitants', 
        subtitle = '(source: Natural Earth)',
        caption = '@ThomIvar') +
   theme_void() +
