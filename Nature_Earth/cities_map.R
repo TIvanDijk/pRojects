@@ -25,10 +25,10 @@ ggplot(df) +
   theme_void() +
   theme(plot.background = element_rect(fill = '#fffef7', color = '#fffef7'), 
         text = element_text('American Typewriter', color = 'grey30'),
-        plot.title = element_text(hjust = 0.5, size = 22, face = 'bold'), 
+        plot.title = element_text(hjust = 0.5, size = 24, face = 'bold'), 
         plot.subtitle = element_text(hjust = 0.5, size = 10), 
         plot.caption = element_text(size = 10, color = 'grey70'), 
         plot.margin = margin(0.5, 0.5, 0.5, 0.5, unit = 'cm'))
 
-ggsave("Nature_Earth/cities_map.png", width = 12, height = 8)
+ggsave("Nature_Earth/cities_map.png", width = 10, height = 6)
 
