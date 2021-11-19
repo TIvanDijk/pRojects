@@ -15,3 +15,6 @@
 
 ## Urbanisation
 ![Map showing three different levels of urbanisation for Europe. Highest urbanisation rates in NL and UK, low rates in scandinavia.](https://github.com/TIvanDijk/pRojects/blob/main/30DaysMaps/urban.png)
+
+## Texel
+![Map showing the roads, beaches, woodlands and major places of Texel](https://github.com/TIvanDijk/pRojects/blob/main/30DaysMaps/texel.png)
