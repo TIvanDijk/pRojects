@@ -18,3 +18,6 @@
 
 ## Texel
 ![Map showing the roads, beaches, woodlands and major places of Texel](https://github.com/TIvanDijk/pRojects/blob/main/30DaysMaps/texel.png)
+
+## Boundaries
+![grey-scale map with red labels showing the province boundaries of the Netherlands. Labels indicate the capital of each province.](https://github.com/TIvanDijk/pRojects/blob/main/30DaysMaps/boundaries.png)
