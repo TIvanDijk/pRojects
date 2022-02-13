@@ -1,6 +1,7 @@
 # -- File to create valentine.gif -- 
 library(tidyverse)
 library(gganimate)
+library(ggfx)
 
 # -- 1: create dataset --
 n.draw = 100  
@@ -34,12 +35,13 @@ df <- df[df$frame > 1,]
 # 2: make graph
 p <- ggplot(df, aes(x = x, y = y)) +
   geom_path(aes(alpha = 1 - alpha), color = '#f8f4ef', size = 1) +
-  geom_polygon(aes(x = x - 0.50, y = y - 0.70, alpha = alpha), fill = '#702632') +
-  geom_polygon(aes(alpha = alpha), fill = '#912f40') +
-  geom_text(aes(y = 17.5 - 0.10, x = 0 - 0.20, label = txt), hjust = 0.5, 
-            size = 12, color = '#702632', family = 'American Typewriter') +
-  geom_text(aes(y = 17.5, x = 0, label = txt), hjust = 0.5, 
-            size = 12, color = '#912f40', family = 'American Typewriter') +
+  with_shadow(
+    geom_polygon(aes(alpha = alpha), fill = '#912f40'), 
+    colour = '#702632', x_offset = -6, y_offset = 10) +
+  with_shadow(
+    geom_text(aes(y = 17.5, x = 0, label = txt), hjust = 0.5, size = 12, 
+              color = '#912f40', family = 'American Typewriter'), 
+    colour = '#702632', x_offset = -2.5, y_offset = 1) +
   labs(caption = '@ThomIvar') +
   scale_alpha_identity() +
   coord_fixed() +
