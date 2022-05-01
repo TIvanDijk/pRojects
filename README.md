@@ -1,4 +1,11 @@
-# Overview
+*below are some highlighted topics on this repo*
+
+## The 30 Day Chart Challenge
+A Twitter Challenge consisting of 30 Charts divided over 5 categories. 
+
+![GIF of all different data visualisations I made for the 30 Day Chart Challenge](https://github.com/TIvanDijk/pRojects/blob/main/30DayChartChallenge/summary.gif)
+
+or took a look at the full Twitter-thread [here!](https://twitter.com/ThomIvar/status/1509954245289603074?s=20&t=mFR8YoJdFGSHxp4DwA35dw)
 
 ## Pumpkins.R
 ![drawing of pumpkin based mathematical formulae ](https://github.com/TIvanDijk/pRojects/blob/main/Halloween/pumpkin.gif)
